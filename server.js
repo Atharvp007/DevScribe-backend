@@ -5,6 +5,7 @@ import userRoute from "./routes/user.route.js"
 import cors from 'cors'
 import cookieParser from 'cookie-parser';
 import blogRoute from "./routes/blog.route.js"
+import commentRoute from "./routes/comment.route.js"
 
 dotenv.config()
 const app = express()
@@ -23,6 +24,7 @@ app.use(cors({
 
 app.use("/api/v1/user", userRoute)
  app.use("/api/v1/blog", blogRoute)
+  app.use("/api/v1/comment", commentRoute)
 
 app.listen(PORT, ()=>{
     connectDB();
